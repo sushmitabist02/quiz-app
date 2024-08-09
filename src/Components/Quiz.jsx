@@ -30,9 +30,16 @@ const Quiz = () => {
     setClickedOption(0);
     setScore(0);
   };
+
+  const progress = ((currentQuestion + 1) / QuizData.length) * 100;
+
   return (
     <div>
-      <p className="heading-txt">Quiz APP</p>
+      <p className="heading-txt">Quiz</p>
+      <div className="progress-container">
+        <div className="progress-bar" style={{ width: `${progress}%` }}></div>
+      </div>
+
       <div className="container">
         {showResult ? (
           <QuizResult
